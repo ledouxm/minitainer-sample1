@@ -1,12 +1,10 @@
 version: "3.4"
 services:
   server:
-    image: "ghcr.io/ledouxm/minitainer-sample2:${BRANCH}"
-    ports:
-      - "8080"
+    image: "ghcr.io/ledouxm/minitainer-sample2:${TAG:-main}"
     environment:
+      - HTTP_PORT=${HTTP_PORT}
+    ports:
+      - "${HTTP_PORT}"
     profiles:
       - production
-
-volumes:
-networks:
