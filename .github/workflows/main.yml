@@ -2,7 +2,7 @@ name: PROD - Publish Docker image and deploy
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 env:
