@@ -5,6 +5,8 @@ services:
     environment:
       - HTTP_PORT=${HTTP_PORT}
       - HTTP_HOST=${HTTP_HOST}
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
     ports:
       - "${HTTP_PORT}"
     networks:
