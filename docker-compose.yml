@@ -6,5 +6,11 @@ services:
       - HTTP_PORT=${HTTP_PORT}
     ports:
       - "${HTTP_PORT}"
+    networks:
+      - nginx-network
     profiles:
       - production
+networks:
+    nginx-network:
+        external: true
+        name: nginx-network
