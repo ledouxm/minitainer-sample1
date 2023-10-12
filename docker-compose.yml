@@ -4,6 +4,7 @@ services:
     image: "ghcr.io/ledouxm/minitainer-sample2:${TAG:-main}"
     environment:
       - HTTP_PORT=${HTTP_PORT}
+      - HTTP_HOST=${HTTP_HOST}
     ports:
       - "${HTTP_PORT}"
     networks:
@@ -11,6 +12,6 @@ services:
     profiles:
       - production
 networks:
-    nginx-network:
-        external: true
-        name: nginx-network
+  nginx-network:
+    external: true
+    name: nginx-network
