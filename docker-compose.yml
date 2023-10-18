@@ -5,15 +5,17 @@ services:
     environment:
       - HTTP_PORT=${HTTP_PORT}
       - HTTP_HOST=${HTTP_HOST}
-      - VIRTUAL_HOST=${VIRTUAL_HOST}
-      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
     ports:
       - "${HTTP_PORT}"
-    networks:
-      - nginx-network
     profiles:
       - production
-networks:
-  nginx-network:
-    external: true
-    name: nginx-network
+
+  server2:
+    image: "ghcr.io/ledouxm/minitainer-sample1:${TAG:-main}"
+    environment:
+      - HTTP_PORT=${HTTP_PORT2}
+      - HTTP_HOST=${HTTP_HOST}
+    ports:
+      - "${HTTP_PORT2}"
+    profiles:
+      - production
