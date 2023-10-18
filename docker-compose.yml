@@ -3,8 +3,8 @@ services:
   server:
     image: "ghcr.io/ledouxm/minitainer-sample2:${TAG:-main}"
     environment:
-      - HTTP_PORT=${HTTP_PORT}
-      - HTTP_HOST=${HTTP_HOST}
+      HTTP_PORT: ${HTTP_PORT}
+      HTTP_HOST: ${HTTP_HOST}
     ports:
       - "${HTTP_PORT}"
     profiles:
@@ -13,8 +13,8 @@ services:
   server2:
     image: "ghcr.io/ledouxm/minitainer-sample2:${TAG:-main}"
     environment:
-      - HTTP_PORT=${HTTP_PORT2}
-      - HTTP_HOST=${HTTP_HOST}
+      HTTP_PORT: ${HTTP_PORT2}
+      HTTP_HOST: ${HTTP_HOST}
     ports:
       - "${HTTP_PORT2}"
     profiles:
